@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- UserMapper.xml：用户表 SQL 操作 -->
+<mapper namespace="com.store.Mapper.UserMapper">
+
+    <!-- 根据 id 查询用户，返回 User 实体 -->
+    <select id="getById" resultType="com.store.domain.po.User">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+</mapper>

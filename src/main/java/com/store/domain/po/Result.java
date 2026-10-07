@@ -1,0 +1,39 @@
+package com.store.domain.po;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Result {
+    private Integer code;
+    private String  msg;
+    private Object data;
+    // 成功，不带返回数据
+    public static Result success(){
+        Result result =new Result();
+        result.code=1;
+        result.msg ="success";
+        return result;
+    }
+
+    // 成功，携带业务数据
+    public static Result success(Object object){
+        Result result =new Result();
+        result.data=object;
+        result.code=1;
+        result.msg ="success";
+        return result;
+    }
+
+    // 失败
+    public static Result error(String msg){
+        Result result =new Result();
+        result.data=null;
+        result.code=0;
+        result.msg =msg;
+        return result;
+    }
+}
